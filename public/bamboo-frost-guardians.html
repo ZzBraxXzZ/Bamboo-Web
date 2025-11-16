@@ -7,9 +7,9 @@
   <title>Bamboo Frost Guardians - Una historia de trabajo en equipo y fe</title>
   <meta name="description" content="La leyenda de los Bamboo Frost Guardians: Una historia inspiradora de trabajo en equipo, fe y nuevas oportunidades en Pandatech.">
   <meta name="author" content="Bamboo Frost Guardians">
-  <link rel="icon" type="image/jpeg" href="bamboo-logo.jpg">
-  <link rel="shortcut icon" type="image/jpeg" href="bamboo-logo.jpg">
-  <link rel="apple-touch-icon" href="bamboo-logo.jpg">
+  <link rel="icon" type="image/jpeg" href="./bamboo-logo.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="./bamboo-logo.jpg">
+  <link rel="apple-touch-icon" href="./bamboo-logo.jpg">
   <meta name="theme-color" content="#a8d5ba">
   
   <style>
@@ -645,7 +645,7 @@
     <div class="content">
       <!-- Logo -->
       <div class="logo-container">
-        <img src="bamboo-logo.jpg" alt="Bamboo Frost Guardians Logo" class="logo">
+        <img src="./bamboo-logo.jpg" alt="Bamboo Frost Guardians Logo" class="logo" onerror="this.src='bamboo-logo.jpg';">
       </div>
 
       <!-- Header -->
@@ -723,5 +723,48 @@
       </footer>
     </div>
   </div>
+  
+  <script>
+    // Force animations to start
+    (function() {
+      // Ensure animations are running
+      const style = document.createElement('style');
+      style.textContent = `
+        body {
+          animation-play-state: running !important;
+          -webkit-animation-play-state: running !important;
+        }
+        .bg-decoration, .bg-circle, .particle, .wave {
+          animation-play-state: running !important;
+          -webkit-animation-play-state: running !important;
+        }
+      `;
+      document.head.appendChild(style);
+      
+      // Force reflow to restart animations
+      const bgDecoration = document.querySelector('.bg-decoration');
+      if (bgDecoration) {
+        bgDecoration.style.display = 'none';
+        bgDecoration.offsetHeight; // Trigger reflow
+        bgDecoration.style.display = '';
+      }
+      
+      // Verify logo is loaded
+      const logo = document.querySelector('.logo');
+      if (logo) {
+        logo.onerror = function() {
+          // Try alternative paths
+          const paths = ['bamboo-logo.jpg', '/bamboo-logo.jpg', './bamboo-logo.jpg'];
+          let currentPath = 0;
+          const tryNext = () => {
+            if (currentPath < paths.length) {
+              this.src = paths[currentPath++];
+            }
+          };
+          tryNext();
+        };
+      }
+    })();
+  </script>
 </body>
 </html>
