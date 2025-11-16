@@ -3,18 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Bamboo Frost Guardians - Una historia de trabajo en equipo y fe</title>
   <meta name="description" content="La leyenda de los Bamboo Frost Guardians: Una historia inspiradora de trabajo en equipo, fe y nuevas oportunidades en Pandatech.">
   <meta name="author" content="Bamboo Frost Guardians">
-  <link rel="icon" type="image/jpeg" href="bamboo-logo.jpg">
-  <link rel="shortcut icon" type="image/jpeg" href="bamboo-logo.jpg">
-  <link rel="apple-touch-icon" href="bamboo-logo.jpg">
+  <link rel="icon" type="image/jpeg" href="/bamboo-logo.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="/bamboo-logo.jpg">
+  <link rel="apple-touch-icon" href="/bamboo-logo.jpg">
+  <meta name="theme-color" content="#a8d5ba">
   
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+    
+    /* Force hardware acceleration */
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     body {
@@ -28,7 +37,10 @@
         hsl(195, 60%, 95%) 100%
       );
       background-size: 300% 300%;
+      -webkit-animation: gradientShift 8s ease infinite;
       animation: gradientShift 8s ease infinite;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       color: hsl(158, 30%, 15%);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -63,6 +75,24 @@
         background-position: 0% 0%;
       }
     }
+    
+    @-webkit-keyframes gradientShift {
+      0% {
+        background-position: 0% 0%;
+      }
+      25% {
+        background-position: 100% 50%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      75% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
 
     /* Decorative Background Elements */
     .bg-decoration {
@@ -81,8 +111,13 @@
     .bg-circle {
       position: absolute;
       border-radius: 50%;
+      -webkit-filter: blur(50px);
       filter: blur(50px);
       will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .bg-circle-1 {
@@ -91,6 +126,7 @@
       width: 200px;
       height: 200px;
       background: hsl(195, 60%, 80%);
+      -webkit-animation: float1 4s ease-in-out infinite;
       animation: float1 4s ease-in-out infinite;
     }
 
@@ -100,7 +136,9 @@
       width: 250px;
       height: 250px;
       background: hsl(150, 40%, 75%);
+      -webkit-animation: float2 5s ease-in-out infinite;
       animation: float2 5s ease-in-out infinite;
+      -webkit-animation-delay: 0.5s;
       animation-delay: 0.5s;
     }
 
@@ -110,7 +148,9 @@
       width: 180px;
       height: 180px;
       background: hsl(195, 55%, 77%);
+      -webkit-animation: float3 6s ease-in-out infinite;
       animation: float3 6s ease-in-out infinite;
+      -webkit-animation-delay: 1s;
       animation-delay: 1s;
     }
 
@@ -120,6 +160,7 @@
       width: 160px;
       height: 160px;
       background: hsl(158, 35%, 73%);
+      -webkit-animation: float4 4.5s ease-in-out infinite;
       animation: float4 4.5s ease-in-out infinite;
     }
 
@@ -129,7 +170,9 @@
       width: 190px;
       height: 190px;
       background: hsl(195, 50%, 75%);
+      -webkit-animation: float5 5.5s ease-in-out infinite;
       animation: float5 5.5s ease-in-out infinite;
+      -webkit-animation-delay: 0.8s;
       animation-delay: 0.8s;
     }
 
@@ -139,7 +182,9 @@
       width: 170px;
       height: 170px;
       background: hsl(150, 30%, 70%);
+      -webkit-animation: float6 4.8s ease-in-out infinite;
       animation: float6 4.8s ease-in-out infinite;
+      -webkit-animation-delay: 1.5s;
       animation-delay: 1.5s;
     }
 
@@ -148,9 +193,14 @@
       position: absolute;
       border-radius: 50%;
       background: hsl(195, 60%, 75%);
+      -webkit-filter: blur(1px);
       filter: blur(1px);
       box-shadow: 0 0 15px hsla(195, 60%, 85%, 0.8);
       will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .particle-1 {
@@ -158,6 +208,7 @@
       height: 8px;
       top: 20%;
       left: 10%;
+      -webkit-animation: particleFloat1 10s ease-in-out infinite;
       animation: particleFloat1 10s ease-in-out infinite;
     }
 
@@ -166,7 +217,9 @@
       height: 7px;
       top: 60%;
       right: 20%;
+      -webkit-animation: particleFloat2 12s ease-in-out infinite;
       animation: particleFloat2 12s ease-in-out infinite;
+      -webkit-animation-delay: 1s;
       animation-delay: 1s;
     }
 
@@ -175,7 +228,9 @@
       height: 9px;
       bottom: 30%;
       left: 30%;
+      -webkit-animation: particleFloat3 14s ease-in-out infinite;
       animation: particleFloat3 14s ease-in-out infinite;
+      -webkit-animation-delay: 2s;
       animation-delay: 2s;
     }
 
@@ -184,7 +239,9 @@
       height: 7px;
       top: 40%;
       right: 40%;
+      -webkit-animation: particleFloat4 11s ease-in-out infinite;
       animation: particleFloat4 11s ease-in-out infinite;
+      -webkit-animation-delay: 0.5s;
       animation-delay: 0.5s;
     }
 
@@ -193,7 +250,9 @@
       height: 8px;
       bottom: 50%;
       left: 50%;
+      -webkit-animation: particleFloat5 13s ease-in-out infinite;
       animation: particleFloat5 13s ease-in-out infinite;
+      -webkit-animation-delay: 1.5s;
       animation-delay: 1.5s;
     }
 
@@ -209,17 +268,24 @@
         hsla(150, 30%, 88%, 0.3) 50%, 
         hsla(195, 60%, 90%, 0.2) 100%);
       opacity: 0.4;
+      -webkit-animation: waveMove 15s ease-in-out infinite;
       animation: waveMove 15s ease-in-out infinite;
       will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .wave-2 {
+      -webkit-animation-delay: -3s;
       animation-delay: -3s;
       opacity: 0.3;
       height: 120px;
     }
 
     .wave-3 {
+      -webkit-animation-delay: -6s;
       animation-delay: -6s;
       opacity: 0.2;
       height: 100px;
@@ -563,7 +629,7 @@
     <div class="content">
       <!-- Logo -->
       <div class="logo-container">
-        <img src="bamboo-logo.jpg" alt="Bamboo Frost Guardians Logo" class="logo">
+        <img src="/bamboo-logo.jpg" alt="Bamboo Frost Guardians Logo" class="logo">
       </div>
 
       <!-- Header -->
