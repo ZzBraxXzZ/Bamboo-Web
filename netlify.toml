@@ -2,10 +2,8 @@
   publish = "dist"
   command = "npm run build"
 
-[[redirects]]
-  from = "/bamboo-frost-guardians.html"
-  to = "/bamboo-frost-guardians.html"
-  status = 200
+# Serve static HTML files directly
+# No redirects needed for static files - they are served as-is from dist/
 
 [[headers]]
   for = "/*"
